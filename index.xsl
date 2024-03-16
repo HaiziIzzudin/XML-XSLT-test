@@ -6,6 +6,9 @@
   <xsl:template match="/">
     <html>
       <head>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <title>XML test</title>
         <!-- <link rel="stylesheet" href="style.css"></link> -->
         <link rel="stylesheet" href="css/material-design-light.css"></link>
         <link rel="stylesheet" href="style.css"></link>
