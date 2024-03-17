@@ -1,3 +1,6 @@
+# Prerequisites
+Python 3.12
+
 # How to preview/ start the local dev server
 
 1. Clone this repository (`https://github.com/HaiziIzzudin/XML-XSLT-test.git`), and open vscode from the project folder.
