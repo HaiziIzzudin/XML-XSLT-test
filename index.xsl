@@ -18,12 +18,21 @@
       <script>
         function displayForm () {
           document.querySelector(".dark-cover").classList.add("show");
-          document.querySelector("form").classList.add("show");
+          document.querySelector("#addrecord").classList.add("show");
         }
         function undisplayForm () {
           document.querySelector(".dark-cover").classList.remove("show");
-          document.querySelector("form").classList.remove("show");
+          document.querySelector("#addrecord").classList.remove("show");
         }
+        function confirmDelete () {
+          document.querySelector(".dark-cover").classList.add("show");
+          document.querySelector("#confirmdelete").classList.add("show");
+        }
+        function undisplayConfirmDelete () {
+          document.querySelector(".dark-cover").classList.remove("show");
+          document.querySelector("#confirmdelete").classList.remove("show");
+        }
+
       </script>
 
       <body>
@@ -33,6 +42,7 @@
             <th>Name</th>
             <th>Age</th>
             <th>School</th>
+            <th>Action</th>
           </tr>
 
           <xsl:for-each select="student/client">
@@ -46,6 +56,10 @@
               <td>
                 <xsl:value-of select="school"/>
               </td>
+              <td>
+                <button class="button button-tonal" onclick="confirmDelete()">
+                  <i class="fa-solid fa-trash"></i>Delete</button>
+              </td>
             </tr>
           </xsl:for-each>
         </table>
@@ -54,8 +68,10 @@
 
 
         <div class="dark-cover"></div>
+
+
         <form>
-          <div class="card card-elevated">
+          <div id="addrecord" class="card card-elevated">
             <h1>Add New Entry</h1>
             <div class="field-text field-text-outlined" style="background:var(--md-sys-color-background)">
               <label class="field-text-label" for="text">Name</label>
@@ -75,6 +91,20 @@
             </span>
           </div>
         </form>
+
+        <form>
+          <div id="confirmdelete" class="card card-elevated">
+            <i class="fa-solid fa-trash"></i>
+            <h3>Confirm Delete</h3>
+            <p>Are you sure you want to delete this entry?</p>
+            <span class="button-group">
+              <button type="button" class="button button-text" onclick="undisplayConfirmDelete()">Cancel</button>
+              <button type="button" class="button button-filled" onclick="undisplayConfirmDelete()">Delete</button>
+            </span>
+          </div>
+        </form>
+
+
 
       </body>
     </html>
