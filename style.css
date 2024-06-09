@@ -45,11 +45,13 @@ form {
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
+  backdrop-filter: blur(0px);
   transition: all 0.5s;
 }
 .dark-cover.show {
   visibility: visible;
   opacity: 1;
+  backdrop-filter: blur(10px);
 }
 
 #addrecord,
